@@ -1,0 +1,19 @@
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/gpio.h"
+#include "esp_log.h"
+#include "led_strip.h"
+#include "sdkconfig.h"
+#include "nvs_flash.h"
+#include "esp_netif.h"
+#include "protocol_examples_common.h"
+#include "esp_event.h"
+#include "sdkconfig.h"
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <errno.h>
+#include <netdb.h>            // struct addrinfo
+#include <arpa/inet.h>
+#include "esp_netif.h"
+#include "esp_log.h"

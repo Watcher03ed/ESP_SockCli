@@ -10,8 +10,7 @@
 
 
 extern void tcp_client(void);
-
-void tcp_client_main(void)
+void tcp_client_init(void)
 {
     ESP_ERROR_CHECK(nvs_flash_init());
     ESP_ERROR_CHECK(esp_netif_init());
@@ -22,6 +21,14 @@ void tcp_client_main(void)
      * examples/protocols/README.md for more information about this function.
      */
     ESP_ERROR_CHECK(example_connect());
+}
 
-    tcp_client();
+void tcp_client_main(void)
+{
+    /* This helper function configures Wi-Fi or Ethernet, as selected in menuconfig.
+     * Read "Establishing Wi-Fi or Ethernet Connection" section in
+     * examples/protocols/README.md for more information about this function.
+     */
+    
+    tcp_client();// Loop
 }
