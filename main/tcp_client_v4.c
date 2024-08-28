@@ -59,7 +59,7 @@ int startSockCli(void)
     ESP_ERROR_CHECK(get_addr_from_stdin(PORT, SOCK_STREAM, &ip_protocol, &addr_family, &dest_addr));
 #endif
 
-    int sock =  socket(addr_family, SOCK_STREAM, ip_protocol);
+    sock =  socket(addr_family, SOCK_STREAM, ip_protocol);
     if (sock < 0) {
         ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
         return(sock);
