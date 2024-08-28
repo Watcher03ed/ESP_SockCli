@@ -26,6 +26,7 @@
 
 static const char *TAG = "example";
 static const char *payload = "Message from ESP32 ";
+extern void app_blink(void);
 
 
 void tcp_client(void)
@@ -81,7 +82,8 @@ void tcp_client(void)
                 ESP_LOGI(TAG, "Received %d bytes from %s:", len, host_ip);
                 ESP_LOGI(TAG, "%s", rx_buffer);
             }
-            vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+            app_blink();
+            vTaskDelay(CONFIG_TASK_PERIOD / portTICK_PERIOD_MS);
         }
 
         if (sock != -1) {
